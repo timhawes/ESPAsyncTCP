@@ -562,7 +562,7 @@ int ax_port_read(int fd, uint8_t *data, int len) {
     return 0;
   }
 
-  read_buf =(uint8_t*)calloc(fd_data->tcp_pbuf->len + 1, sizeof(uint8_t));
+  read_buf =(uint8_t*)calloc(len, sizeof(uint8_t));
   pread_buf = read_buf;
   if (pread_buf != NULL){
     recv_len = pbuf_copy_partial(fd_data->tcp_pbuf, read_buf, len, fd_data->pbuf_offset);
